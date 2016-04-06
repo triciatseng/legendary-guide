@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title>project</title>
+  <meta charset="utf-8">
+  <base href="/" />
+  <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/site.css"/>
+</head>
+
+<body>
+  <div class="container">
+  <ul>
+    <li><a ui-sref="Home"><span class="glyphicon glyphicon-home"></span></a></li>
+    <li><a ui-sref="Food"><span class="glyphicon glyphicon-apple"></span></a></li>
+    <li><a ui-sref="Lists"><span class="glyphicon glyphicon-th-list"></span></a></li>
+    <li style="float:right"><a ui-sref="Login"><span class="glyphicon glyphicon-user"></span></a></li>
+  </ul>
+</div>
+
+<div class="container">
+  <ui-view></ui-view>
+
+</div>
+
+  <script src="/scripts/angular/angular.min.js"></script>
+  <script src="/scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/scripts/angular-resource/angular-resource.min.js"></script>
+  <script src="/scripts/angular-animate/angular-animate.min.js"></script>
+  <script src="/scripts/angular-touch/angular-touch.min.js"></script>
+  <script src="/scripts/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/services/ItemServices.js"></script>
+  <script src="/js/services/ListServices.js"></script>
+  <script src="/js/services/UserServices.js"></script>
+  <script src="/js/services/AuthInterceptor.js"></script>
+  <script src="/js/controllers/ItemController.js"></script>
+  <script src="/js/controllers/ItemCreateController.js"></script>
+  <script src="/js/controllers/ItemDetailsController.js"></script>
+  <script src="/js/controllers/ItemUpdateController.js"></script>
+  <script src="/js/controllers/ItemSearchController.js"></script>
+  <script src="/js/controllers/ListController.js"></script>
+  <script src="/js/controllers/ListCreateController.js"></script>
+  <script src="/js/controllers/ListDetailsController.js"></script>
+  <script src="/js/controllers/ListSearchController.js"></script>
+  <script src="/js/controllers/ListUpdateController.js"></script>
+  <script src="/js/controllers/UserLoginController.js"></script>
+  <script src="/js/controllers/UserRegisterController.js"></script>
+
+</body>
+
+</html>

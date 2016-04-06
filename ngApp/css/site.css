@@ -1,0 +1,52 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.space {
+  width:15px;
+  height:auto;
+  display:inline-block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+    text-decoration: none;
+    color: white;
+}
+
+li a:visited {
+  color: white;
+}
+
+.login {
+    background-color: ;
+}
+
+.signup {
+  background-color: rgb(101, 99, 101);
+}
+
+.background {
+  background-color: rgb(176, 176, 176);
+  border-radius: 5px;
+}
