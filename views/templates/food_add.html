@@ -16,12 +16,15 @@
         <br />
         <select required ng-model="vm.item.storage" style="border: 1px solid #ccc; height: 30px;" >
           <option value="" disabled="" >storage method</option>
-          <option value="pantry">Pantry</option>
-          <option value="fridge">Fridge</option>
-          <option value="freezer">Freezer</option>
+          <option value="pantry">pantry</option>
+          <option value="fridge">fridge</option>
+          <option value="freezer">freezer</option>
         </select>
+        <!-- <input type="hidden" ng-model="vm.item.pantryIMG" value="../images/pantry.jpg"/>
+        <input type="hidden" ng-model="vm.item.freezerIMG" value="../images/freezer.jpg"/>
+        <input type="hidden" ng-model="vm.item.fridgeIMG" value="../images/fridge.jpg"/> -->
         <br />
-        <button type="submit">add</button>
+        <button type="submit" class="btn btn-primary">add</button>
       </form>
     </div>
     <div class="col-md-3"></div>

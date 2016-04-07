@@ -1,1 +1,36 @@
-<h1>Details</h1>
+<div class="background">
+  <div class="container">
+    <br />
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <br />
+<center>
+
+        <div class="widebox">
+          <button class="btn btn-danger" style="float:right;" ng-click="vm.remove()"><span class="glyphicon glyphicon-remove"></span></button>
+          <button class="btn btn-warning" style="float:right;" ui-sref="FoodUpdate({id: vm.item._id})"><span class="glyphicon glyphicon-pencil"></span></button>
+            <center>
+              <h1 style="color: green">{{vm.item.name}}</h1>
+            </center>
+            <p style="text-align:left">
+              purchased on {{vm.item.datePurch | date: 'longDate'}}
+              <br />
+              expires on {{vm.item.dateExp | date: 'longDate'}}
+              <br />
+              stored in the {{vm.item.storage}}
+              <br />
+            </p>
+              <a  href="http://allrecipes.com/search/results/?ingincl={{vm.item.name}}&sort=re" target="_blank"><button class="btn btn-primary">see some recipes with {{vm.item.name}} as an ingredient</button></a>
+          <br />
+          <br />
+
+        </div>
+      </center>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <br /><br />
+
+</div>

@@ -27,6 +27,7 @@ namespace app {
       controllerAs: 'vm'
     }).state('FoodUpdate', {
       url: '/food-update/:id',
+      templateUrl: '/templates/food_update.html'
       controller: 'ItemUpdateController',
       controllerAs: 'vm'
     }).state('Login', {
