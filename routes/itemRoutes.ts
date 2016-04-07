@@ -1,9 +1,15 @@
 import * as express from 'express';
 import {controller} from '../api/Item';
 import {Item} from '../models/Item';
+import {List} from '../models/List';
+import * as jwt from 'express-jwt';
 
-const ctrl = controller(Item);
+const ctrl = controller(Item, List);
 const router = express.Router();
+const auth = jwt({
+  userProperty: 'payload',
+  secret: process.env.JWT_SECRET
+});
 
 //Base Route: /api/v1/food
 
