@@ -3,29 +3,22 @@
     <br />
     <center>
       <h1 style="color:white">register</h1>
-    </center>
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <p>
-      </p>
       <br />
-        <div>
-          <center>
-          <form class="form-inline" ng-submit="vm.register()">
-            <input required type="text" ng-model="vm.user.name" class="form-control" placeholder="your name"/>
-            <br />
-            <input required type="email" ng-model="vm.user.email" class="form-control" placeholder="your email"/>
-            <br />
-            <input required type="password" ng-model="vm.user.password" class="form-control" placeholder="your password" />
-            <br />
-            <input type="url" ng-model="vm.user.imageURL" class="form-control" placeholder="your profile photo"/>
-            <br />
-            <br />
-            <button type="submit" class="btn btn-primary">sign up</button>
-          </form>
-        </center>
-        </div>
-
+      <form class="form-inline" ng-submit="vm.register()">
+        <input required type="text" class="form-control" ng-model="vm.user.name" placeholder="name"/>
+        <br />
+        <input required type="email" class="form-control" ng-model="vm.user.email" placeholder="email"/>
+        <br />
+        <input required type="text" class="form-control" ng-model="vm.user.password" placeholder="password"/>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary">sign up</button>
+        <br />
+        <br />
+      </form>
+    </center>
     </div>
     <div class="col-md-3"></div>
   </div>

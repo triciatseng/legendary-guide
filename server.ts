@@ -7,8 +7,8 @@ import bodyParser = require('body-parser');
 import mongoose = require('mongoose');
 const app = express();
 
-require('./models/Item');
-require('./models/List');
+require('./models/Trip');
+require('./models/Food');
 require('./models/User');
 require('./config/passport');
 
@@ -40,10 +40,9 @@ app.use('/templates',require('./routes/viewRoutes'));
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));
 
-app.use('/api/v1/food',require('./routes/itemRoutes'));
-app.use('/api/v1/list',require('./routes/listRoutes'));
+app.use('/api/v1/trips',require('./routes/tripRoutes'));
+app.use('/api/v1/groceries',require('./routes/foodRoutes'));
 app.use('/api/v1/users',require('./routes/userRoutes'));
-
 
 app.get('/*', function(req, res, next) {
   if (/.js|.html|.css|templates|js|scripts/.test(req.path) || req.xhr) {

@@ -1,16 +1,19 @@
+import {User} from '../models/User';
+
 let passport = require('passport');
 let FacebookStrategy = require('passport-facebook').Strategy;
-import {User} from '../models/User';
 
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
   callbackURL: process.env.FACEBOOK_CALLBACK_URL,
-  profileFields: ['id','displayName','email','picture'],
-  passReqToCallback: true
+  profileFields: ['id','displayName','email'],
+  passReqtoCallback: true
 },
-  function(req, accessToken, refreshToken, profile, next) {
-    User.findOne({'facebook.id': profile.id}).exec((err,user) => {
+
+function(req,acessToken,refreshToken,profile,next){
+  User.findOne({'facebook.id': profile.id})
+    .exec((err,user) => {
       if (err) return next(err);
       if (user) {
         req['tempUser'] = user;
@@ -18,9 +21,8 @@ passport.use(new FacebookStrategy({
       } else {
         let u = new User();
         u.name = profile.displayName;
-        u.imageURL = profile.photos[0].value;
-        u.facebook.id = profile.id;
-        u.facebook.token = accessToken;
+        u.email = profile.email;
+        u._id = profile.id;
         u.save((err,user) => {
           if (err) return next(err);
           req['tempUser'] = user;
@@ -28,5 +30,5 @@ passport.use(new FacebookStrategy({
         });
       }
     });
-  }
+}
 ));

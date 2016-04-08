@@ -6,28 +6,16 @@
     </center>
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <p>
-        Don't have an account? <a ui-sref="Register">Sign up here!</a>
-      </p>
       <br />
-        <div>
-          <center>
-          <form class="form-inline" ng-submit="vm.login()">
-            <input type="email" required placeholder="your email" ng-model="vm.user.email" class="form-control" />
-            <input type="password" required placeholder="your password" ng-model="vm.user.password" class="form-control" />
-            <br />
-            <br />
-            <button type="submit" class="btn btn-primary">login</button>
-          </form>
-          <br />
-          <br />
-          Login with Facebook
-          <a href="/api/v1/users/auth/facebook" target="_self">
-            <button>Login</button>
-          </a>
-        </center>
-        </div>
-
+        <form class="form-inline" ng-submit="vm.login()">
+          <input required type="email" class="form-control" ng-model="vm.user.email" placeholder="email"/>
+          <input required type="password" class="form-control" ng-model="vm.user.password" placeholder="password"/>
+          <button type="submit" class="btn btn-primary">login</button>
+        </form>
+        <br />
+        <p>
+          don't have an account? <a ui-sref="Register">sign up!</a>
+        </p>
     </div>
     <div class="col-md-3"></div>
   </div>

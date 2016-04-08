@@ -4,9 +4,8 @@ namespace app.i {
     email: string;
     password: string;
     name: string;
-    imageURL: string;
 
-    food: Array<string|IItem>;
-    lists: Array<string|IList>;
+    groceries: Array<string | IFood>;
+    trips: Array<string | ITrip>;
   }
 }

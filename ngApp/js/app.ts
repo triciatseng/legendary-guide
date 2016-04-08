@@ -1,69 +1,71 @@
+//need to build ng-show login/logout button
+//
+//Account -- add either list or individual item(function), or view all of the food(link), or all of the shopping trips(link), logout AccountController
+//Trips -- view all shopping Trips TripController
+//TripDetails -- add food to trip TripDetailsController
+//Groceries -- see all food items and search FoodController
+//AddFood -- add food item FoodAddController
+//FoodUpdate -- see details and delete food FoodUpdateController
+
 'use strict';
-namespace app {
-  angular.module('app', ['ui.router', 'ngResource', 'ui.bootstrap'])
+namespace app{
+  angular.module('app', ['ui.router','ngResource','ui.bootstrap'])
     .config((
     $stateProvider: ng.ui.IStateProvider,
     $locationProvider: ng.ILocationProvider,
     $urlRouterProvider: ng.ui.IUrlRouterProvider,
-    $httpProvider: ng.IHttpProvider) => {
+    $httpProvider: ng.IHttpProvider
+  ) => {
+      $stateProvider.state('Home', {
+        url: '/',
+        templateUrl: '/templates/intro.html'
+      }).state('Login', {
+        url: '/login',
+        templateUrl: '/templates/login.html',
+        controller: 'UserController',
+        controllerAs: 'vm'
+      }).state('Register', {
+        url: '/register',
+        templateUrl: '/templates/register.html',
+        controller: 'RegisterController',
+        controllerAs: 'vm'
+      }).state('Account', {
+        url: '/account',
+        templateUrl: '/templates/account.html',
+        controllerAs: 'vm'
+      }).state('Trips', {
+        url: '/shoppingtrips',
+        templateUrl: '/templates/trips.html',
+        controller: 'TripController',
+        controllerAs: 'vm'
+      }).state('AddTrip', {
+        url: '/trip-add',
+        templateUrl: '/templates/trip-add.html',
+        controller: 'TripAddController',
+        controllerAs: 'vm'
+      }).state('TripDetails', {
+        url: '/trip-details/:id',
+        templateUrl: '/templates/trip-details.html',
+        controller: 'TripDetailsController',
+        controllerAs: 'vm'
+      }).state('Groceries', {
+        url: '/groceries',
+        controller: 'FoodController',
+        controllerAs: 'vm'
+      }).state('AddFood', {
+        url: '/food-add',
+        templateUrl: '/templates/food-add.html',
+        controller: 'FoodAddController',
+        controllerAs: 'vm'
+      }).state('FoodUpdate', {
+        url: 'food-update',
+        templateUrl: '/templates/food-update.html',
+        controller: 'FoodUpdateController',
+        controllerAs: 'vm'
+      });
 
-    $stateProvider.state('Home', {
-      url: '/',
-      templateUrl: '/templates/intro.html'
-    }).state('Food', {
-      url: '/food-all',
-      templateUrl: '/templates/food.html',
-      controller: 'ItemHomeController',
-      controllerAs: 'vm'
-    }).state('FoodDetails', {
-      url: '/food-details/:id',
-      templateUrl: '/templates/food_details.html',
-      controller: 'ItemDetailsController',
-      controllerAs: 'vm'
-    }).state('FoodAdd', {
-      url: '/food-add',
-      templateUrl: '/templates/food_add.html',
-      controller: 'ItemCreateController',
-      controllerAs: 'vm'
-    }).state('FoodUpdate', {
-      url: '/food-update/:id',
-      templateUrl: '/templates/food_update.html'
-      controller: 'ItemUpdateController',
-      controllerAs: 'vm'
-    }).state('Login', {
-      url: '/login',
-      templateUrl: '/templates/login.html',
-      controller: 'UserLoginController',
-      controllerAs: 'vm'
-    }).state('Register', {
-      url: '/register',
-      templateUrl: '/templates/register.html',
-      controller: 'UserRegisterController',
-      controllerAs: 'vm'
-    }).state('Lists', {
-      url: '/lists',
-      templateUrl: '/templates/list.html',
-      controller: 'ListHomeController',
-      controllerAs: 'vm'
-    }).state('ListAdd',  {
-      url: '/list-add',
-      templateUrl: '/templates/list_add.html',
-      controller: 'ListCreateController',
-      controllerAs: 'vm'
-    }).state('ListDetails', {
-      url: '/list-details/:id',
-      templateUrl: '/templates/list_details.html',
-      controller: 'ListDetailsController',
-      controllerAs: 'vm'
-    }).state('ListUpdate', {
-      url: '/list-update/:id',
-      templateUrl: '/templates/list_update.html',
-      controller: 'ListUpdateController',
-      controllerAs: 'vm'
-    });
-
-    $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
-    $httpProvider.interceptors.push('AuthInterceptor');
+      $urlRouterProvider.otherwise('/');
+      $locationProvider.html5Mode(true);
+      $httpProvider.interceptors.push('AuthInterceptor');
   });
 }

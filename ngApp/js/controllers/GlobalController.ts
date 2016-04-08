@@ -2,12 +2,7 @@ namespace app.Controllers{
   export class GlobalController{
     public status;
 
-    public logout(){
-      this.UserService.logout();
-      this.$state.go('Login');
-    }
-
-    constructor(private UserService: app.Services.UserService, private $state: ng.ui.IStateService){
+    constructor(private UserService: app.Services.UserService){
       this.status = UserService.status;
     }
   }
