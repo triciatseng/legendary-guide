@@ -7,9 +7,11 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-6">
-      <a ui-sref="Groceries">View my Groceries</a>
-      <br />
-      <a ui-sref="Home">Add a trip!</a>
+      <form ng-submit="vm.createTrip()">
+        <input type="hidden" ng-value="vm.trip._id"/>
+        <input type="hidden" ng-value="vm.trip.dateCreated"/>
+        <button type="submit" class="btn btn-primary">start a new shopping list</button>
+      </form>
     </div>
     <div class="col-md-3">
 

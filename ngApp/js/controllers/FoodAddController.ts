@@ -3,9 +3,9 @@ namespace app.Controllers{
     public food: app.i.IFood;
 
     public addFood(){
-      this.FoodService.soloCreate(this.food).then((res) => {
+      this.FoodService.create(this.food).then((res) => {
         this.$state.go('Groceries');
-      })
+      });
     }
 
     constructor(private FoodService: app.Services.FoodService, private $state: ng.ui.IStateService){}

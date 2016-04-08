@@ -1,6 +1,3 @@
-//need to build ng-show login/logout button
-//
-//Account -- add either list or individual item(function), or view all of the food(link), or all of the shopping trips(link), logout AccountController
 //Trips -- view all shopping Trips TripController
 //TripDetails -- add food to trip TripDetailsController
 //Groceries -- see all food items and search FoodController
@@ -32,6 +29,7 @@ namespace app{
       }).state('Account', {
         url: '/account',
         templateUrl: '/templates/account.html',
+        controller: 'AccountController',
         controllerAs: 'vm'
       }).state('Trips', {
         url: '/shoppingtrips',
@@ -50,6 +48,7 @@ namespace app{
         controllerAs: 'vm'
       }).state('Groceries', {
         url: '/groceries',
+        templateUrl: '/templates/groceries.html',
         controller: 'FoodController',
         controllerAs: 'vm'
       }).state('AddFood', {
@@ -63,7 +62,6 @@ namespace app{
         controller: 'FoodUpdateController',
         controllerAs: 'vm'
       });
-
       $urlRouterProvider.otherwise('/');
       $locationProvider.html5Mode(true);
       $httpProvider.interceptors.push('AuthInterceptor');

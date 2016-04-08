@@ -1,0 +1,51 @@
+<div class="background">
+  <div class="container">
+    <br />
+    <center>
+      <h1 style="color:white">add items to your trip</h1>
+    </center>
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <br />
+      <div ng-repeat="c in vm.trip.groceries">
+        <span class="box">
+          <strong>{{c.itemName}}</strong>
+          <br />
+          <strong>date purchased: </strong>{{c.datePurch}}
+          <br />
+          <strong>expiration date: </strong>{{c.dateExp}}
+          <br />storage method: </strong>{{c.storage}}
+          <br />
+          <button ui-sref="FoodUpdate({id:c._id})">details</button>
+        </span>
+      </div>
+
+      <form class="form-inline" ng-submit="vm.addFood()">
+        <input required type="text" placeholder="item name" ng-model="vm.food.foodName" class="form-control"/>
+        <br />
+        <input required type="text" placeholder="storage method" ng-model="vm.food.storage" class="form-control"/>
+        <br />
+        <label>date purchased</label>
+        <br />
+        <input required type="date" placeholder="date purchased" ng-model="vm.food.datePurch" class="form-control"/>
+        <br />
+        <label>date expired</label>
+        <br />
+        <input required type="date" placeholder="date expired" ng-model="vm.food.dateExp" class="form-control"/>
+        <br />
+        <button type="submit" class="btn btn-primary">add</button>
+        <button type="button" class="btn btn-danger" ui-sref="Groceries">cancel</button>
+      </form>
+      <br />
+
+    </div>
+    <div class="col-md-3">
+      <a ng-click="vm.cancelTrip()" style="float: right"><button class="btn btn-danger">delete trip</button></a>
+
+    </div>
+  </div>
+  <br /><br />
+
+</div>

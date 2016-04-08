@@ -11,6 +11,7 @@ namespace app.Controllers{
         this.food.datePurch = null;
         this.food.dateExp = null;
         this.food.storage = "";
+        this.$state.go('TripsDetails',{id: this.trip._id});
       });
     }
 
@@ -23,7 +24,7 @@ namespace app.Controllers{
     public cancelTrip(){
       this.TripService.remove(this.trip._id).then(() => {
         this.$state.go('Trips');
-      })
+      });
     }
 
     constructor(private TripService: app.Services.TripService,private FoodService: app.Services.FoodService, private $state:ng.ui.IStateService,private $stateParams: ng.ui.IStateParamsService){

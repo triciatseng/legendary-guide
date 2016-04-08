@@ -5,7 +5,7 @@ namespace app.Controllers{
 
     public createTrip(){
       this.TripService.create(this.trip).then((res) => {
-        this.$state.go('TripDetails');
+        this.$state.go('TripDetails',{id:this.trip._id});
       });
     }
 

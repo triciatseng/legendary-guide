@@ -7,9 +7,18 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-6">
-      <a ui-sref="Groceries">View my Groceries</a>
+      <center>
+        <button class="btn btn-primary" ui-sref="Groceries">View my Groceries</button>
+        <button class="btn btn-primary" ui-sref="AddTrip">Add a trip!</button>
+      </center>
       <br />
-      <a ui-sref="Home">Add a trip!</a>
+      <div ng-repeat="c in vm.trips">
+        <span class="box">
+          <strong>trip: {{c.dateCreated | date: 'longDate'}}</strong>
+          <br />
+          <button ui-sref="TripDetails({id:c._id})">details</button>
+        </span>
+      </div>
     </div>
     <div class="col-md-3">
 

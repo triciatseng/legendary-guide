@@ -13,6 +13,7 @@
       <form ng-submit="vm.createTrip()">
         <input type="hidden" ng-value="vm.trip._id"/>
         <input type="hidden" ng-value="vm.trip.dateCreated"/>
+        <input type="hidden" ng-value="vm.trip.dummy" value="1"/>
         <button type="submit" class="btn btn-primary">start a new shopping list</button>
       </form>
       <button ui-sref="AddFood" class="btn btn-primary">add food to your stash of groceries</button>

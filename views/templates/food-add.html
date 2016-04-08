@@ -4,15 +4,28 @@
     <center>
       <h1 style="color:white">add an item</h1>
     </center>
-    <div class="col-md-3">
-
-    </div>
+    <div class="col-md-3"></div>
     <div class="col-md-6">
+      <center>
+      <form class="form-inline" ng-submit="vm.addFood()">
+        <input required type="text" placeholder="item name" ng-model="vm.food.foodName" class="form-control"/>
+        <br />
+        <input required type="text" placeholder="storage method" ng-model="vm.food.storage" class="form-control"/>
+        <br />
+        <label>date purchased</label>
+        <br />
+        <input required type="date" placeholder="date purchased" ng-model="vm.food.datePurch" class="form-control"/>
+        <br />
+        <label>date expired</label>
+        <br />
+        <input required type="date" placeholder="date expired" ng-model="vm.food.dateExp" class="form-control"/>
+        <br />
+        <button type="submit" class="btn btn-primary">add</button>
+        <button type="button" class="btn btn-danger" ui-sref="Groceries">cancel</button>
+      </form>
+    </center>
 
-    </div>
-    <div class="col-md-3">
-
-    </div>
+    </div></div>
   </div>
   <br /><br />
 
