@@ -22,7 +22,9 @@ namespace app.Services{
     }
 
     constructor(private $resource: ng.resource.IResourceService, private $http: ng.IHttpService, private $q: ng.IQService){
-    }
+      this.TripResource = <ITripClass>$resource('/api/v1/trips/:id', null, {
+        'update': {method: 'PUT'}
+      });    }
   }
   angular.module('app').service('TripService',TripService);
 }
